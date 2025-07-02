@@ -1,0 +1,114 @@
+3주차 고양이겜 만드는중
+
+bool값은 true false만 가질수있음
+
+4주차
+
+반복문 for
+% 나머지값 / 몫 값
+arr 배열 변수
+using System.Linq;
+[ ] 대괄호 = 배열
+$
+코딩 쓰여진 순서대로 작동함 당연한건데 생각을 못했음
+
+
+// 1주차부터 강의자료 보면서 복습 시작
+
+1주차 
+뒤에 f를 왜 자꾸 쓰는지 몰랐는데 이해 완
+f란? ⇒ float입니다! 소수점을 나타내는 자료형이죠! 즉, 소수를 쓰고 싶으면 뒤에 f를 붙여줘야 합니다.
+
+변수 지정은 아예 맨 위에
+프레임은 스타트쪽에
+
+아직 스타트랑 업데이트 그리고 따로 맨 밑에 따로 빼서 넣어주는 oncollisionenter2d같은것의 위치를 정확히 파악을 못하겠음
+
+
+Unity의 OnCollisionEnter() 함수는 MonoBehaviour 클래스의 중요한 부분으로, 두 콜라이더 간에 충돌이 감지되면
+Unity에서 자동으로 호출합니다. 손상 적용 또는 음향 효과 재생과 같은 충돌 이벤트를 처리하는 데 사용됩니다.
+-> 작동하려면 콜라이더가 들어가있어야함 / 리지드바디도 연결되어있어야함 (하나는 꼭) 그래야 충돌감지됨
+
+
+SpriteRenderer renderer;
+renderer = GetComponent<SpriteRenderer>();
+스프라이트가 많은데 이걸로 어떻게 스프라이트 체크가 되는가 했더니
+인스펙트창에서 스크립트를 연결해주기때문에 그 해당 스프라이트만 반응하는거였음 오~
+
+Invoke =  호출하다.
+InvokeRepeating -> 결국 반복호출이란 의미 
+
+Unity에서 InvokeRepeating()은 일정 주기로 함수를 반복 호출할 때 사용하는 메서드인데요,
+InvokeRepeating("함수이름", **지연 시간**, **반복 간격**) 형식입니다.
+
+
+void Start()
+{
+    InvokeRepeating("MakeRain", 0, 1f);
+}
+
+void MakeRain()
+{
+    Instantiate(rain);       -> MakeRain이 (rain)이라는 것을 알려주는 내용 같음 위에서 퍼블릭으로 rain 값을 지정해 줬기 때문에 
+}
+
+
+
+
+*싱글톤 (기본)
+public static GameManager instance; -> Gamemanager 자리에 다른것들도 올 수 있는 듯
+private void Awake()
+    {
+        instance = this;
+    }
+
+게임 만들다 보면 거의 반드시 마주치게 되는 디자인 패턴,
+바로 **싱글톤(Singleton)**입니다.
+
+💡 싱글톤이란?
+프로그램 전체에서 단 하나만 존재하는 객체를 만들기 위한 디자인 패턴입니다.
+
+쉽게 말해:
+
+"게임 안에 GameManager는 하나만 있어야 해!"
+
+"점수 관리하는 ScoreManager는 하나만 있으면 돼!"
+
+이럴 때 싱글톤으로 만들어두면, 어디서든 그 객체에 쉽게 접근할 수 있어요.
+
+✅ Unity에서 자주 쓰는 이유
+씬 어디서든 전역적으로 접근해야 할 매니저들이 있기 때문
+
+예: GameManager, AudioManager, UIManager, ObjectPoolManager 등
+
+
+🔁 요약
+항목	내용
+정의	하나만 존재하는 클래스 인스턴스
+사용 이유	어디서든 접근 가능한 전역 관리 객체
+사용 예	GameManager, AudioManager, UIManager
+핵심 코드	public static GameManager Instance; + Awake()에서 할당
+
+
+
+*Tostring
+객체나 숫자 같은 데이터를 “문자열”로 바꿔야 할 때 씁니다.
+
+
+* 리트라이의 경우 보통 이런식으로 진행됨 / 메인씬으로 다시 불러오기
+public void Retry()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+이때 초기화를 해줘야하는데 
+awake에서 타임스케일을 1f으로 해줘야한다. Time.timeScale = 1.0f;
+
+✅ Time.timeScale이란?
+Unity에서 게임 전체의 시간 흐름 속도를 조절하는 값입니다.
+
+기본값은 1.0f (100% 정상 속도)
+0.0f이면 시간이 멈춤 (즉, 정지 상태)
+0.5f면 절반 속도
+2.0f면 2배 빠르게
+
