@@ -1,0 +1,39 @@
+*5강 복습 출시준비 // 필수사항
+
+
+-사운드
+public AudioClip clip;
+public AudioSource audioSource;
+
+void Start()
+{
+    audioSource = GetComponent<AudioSource>();
+}
+넣고 사운드 들어갈 위치에 넣어주기
+
+*audioSource.PlayOneShot(clip); 전에도 썻지만 사운드 안물리게 한번
+
+
+
+유니티로고 없애려면 프로버전 사용해야함ㅋㅋㅋ 그럴수있지.
+
+프로젝트 세팅 - 플레이어 - 스플래쉬이미지
+→ Splash Style : 배경 / 로고 색
+→ Animation : Dolly - 잠깐 커짐 / Static - 일정 크기
+
+로고용 이미지
+→ Mesh Type : Full Rect ⇒ Apply
+→ Animation : Static으로 맞추기
+→ Draw Mode : All Sequential로 맞추기
+
+
+안드로이드로 바꾸고, Landscape Right, Left를 꺼줍니다. -> 세로형 게임일 경우
+- 안드로이드 마켓에 배포하려면 64 bit 지원이 필수가 되었기 때문에 Scripting Backend 를 IL2CPP로 변경합니다
+- Target Architectures에서 ARM64를 체크하도록 합니다.
+
+
+
+서비스 탭 Advertisement Legacy Install 설치 후 Project Settings > Services
+후 구글 사이트가서 번호랑 코드 긁어서 가져오기
+
+
