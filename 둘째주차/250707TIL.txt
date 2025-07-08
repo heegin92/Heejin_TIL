@@ -1,0 +1,106 @@
+콘솔 출력시에는 Console.WriteLine(value); 을 사용
+입력시에는 Console.ReadLine(value);
+value는 출력할 값이고 문자열, 숫자, 변수, 연산식등 다 사용가능
+
+ Console.WriteLine 엔터
+ Console.Write 그냥 이어서 씀
+
+| **이스케이프 시퀀스** | **설명** |
+\' 작은따옴표
+\" 큰따옴표
+\\ 역슬래시삽입
+\n 줄바꿈
+\r 현재줄 맨 앞으로이동
+\t 탭 삽입
+\b 백스페이스 삽입
+
+var -> 맞춰서 변수 선언 됨 (나중에 익숙해지면 쓰시길)
+
+
+ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ 이게 대체 무슨소리냐~~~~~~~~~~~~
+관계연산자
+==같음
+!= 다름
+>큼
+<작음
+>=크거나같음
+<=작거나같음
+
+논리연산자
+&& 논리곱 and
+||논리합 or
+!논리부정 not
+
+비트연산자
+& and 두비트값이 모두 1일때 1을 반환
+| or 두비트 값 중 하나라도 1일때 1을 반환
+^ xor 두비트 값이 서로 다를 때 1을 반환
+~ not 비트 값의 보수 를 반환
+<< 왼쪽시프트 비트를 왼쪽으로 이동
+>> 오른쪽시프트 비트를 오른쪽으로 이동
+
+복합대입 연산자
++= //  x+=y => x=x+y
+이런식으로 들어감
+
+++ 1증
+-- 1감
+
+
+아래는 C#에서 주로 사용되는 연산자들의 우선순위를 나열한 것입니다.
+
+1. 괄호 (): 괄호로 감싸진 부분은 가장 높은 우선순위로 먼저 계산됩니다.
+2. 단항 연산자: 단항 연산자들(++, --, +, -, ! 등)은 괄호 다음으로 높은 우선순위를 가집니다.
+3. 산술 연산자: 산술 연산자들(*, /, %, +, -)은 단항 연산자보다 우선순위가 낮습니다.
+4. 시프트 연산자: 시프트 연산자(<<, >>)는 산술 연산자보다 우선순위가 낮습니다.
+5. 관계 연산자: 관계 연산자들(<, >, <=, >=, ==, !=)는 시프트 연산자보다 우선순위가 낮습니다.
+6. 논리 연산자: 논리 연산자들(&&, ||)는 관계 연산자보다 우선순위가 낮습니다.
+7. 할당 연산자: 할당 연산자들(=, +=, -=, *=, /= 등)는 논리 연산자보다 우선순위가 낮습니다.
+
+
+1주차 과제
+Console.Write("이름을 입력해주세요 : ");
+String name = Console.ReadLine();
+Console.Write("나이를 입력해주세요 : ");
+String age = Console.ReadLine();
+Console.WriteLine($"이름: {name} 나이:{age}");
+---------------------
+Console.Write("x : ");
+String xInput = Console.ReadLine();
+Console.Write("y : ");
+String yInput = Console.ReadLine();
+
+int x = int.Parse(xInput);
+int y = int.Parse(yInput);
+
+int result = x + (y * x);
+
+Console.WriteLine($"x + (y * x) = {result}");
+---------------------------------
+Console.Write("섭씨온도 : ");
+String num1 = Console.ReadLine();
+
+
+int x = int.Parse(num1);
+int num2 = (x * 9 / 5) + 32;
+
+Console.WriteLine($"섭씨온도 : {num1} 화씨온도 : {num2}" );
+--------------------------------
+// BMI = 체중(kg) / (신장(m) * 신장(m))
+
+Console.Write("체중(kg) : ");
+String kg = Console.ReadLine();
+Console.Write("(ex) 158cm = 1.58 \n 신장 :");
+String m = Console.ReadLine();
+
+double x = double.Parse(kg);
+double y = double.Parse(m);
+
+double result = x / (y * y);
+
+Console.WriteLine($"BMI = {result:N2}");
+
+* 왜 인트가 아닌 더블을 사용하는지 물어봄
+인트는 소수점이 인식이 안되어서 더블로해야 소수점인식가능.
+
+직접해보니 역시 어렵다.
