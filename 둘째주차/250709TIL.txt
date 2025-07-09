@@ -1,0 +1,38 @@
+강의내용
+
+if (조건식) { 수행문 ; //조건식이 참일 경우에만 수행 
+else if //  이게 참이면 진행
+else // 조건식이 거짓일 경우에 진행 ( 위에 뭐가잇으면 다 해당한된다면)
+}
+수행문
+
+return flag ?  true값 : false값;
+return answer
+
+
+//
+틱택토 게임 만들수잇을것 같은데 순서 지정할때 아닌가
+
+public  class Example
+{
+	public static void Main()
+	{
+		String[] s;
+		
+		Console.Clear();
+		s = Console.ReadLine().Split(' ');
+
+		int a = Int32.Parse(s[0]);
+		
+		if ( a % 2 == 0)
+			Console.WriteLine($"{a}짝수");
+		else
+			Console.WriteLine($"{a}홀수");
+		
+	}
+}
+
+
+
+c# 복습
+
